@@ -1,0 +1,7 @@
+Buscar en los paquetes de composer
+
+$composer search codeigniter
+
+Crear un proyecto codeigniter con composer (recomendado)
+
+$composer create-project kenjis/codeigniter-composer-installer <destination-dir>
