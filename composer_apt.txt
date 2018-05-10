@@ -1,0 +1,5 @@
+To install
+$sudo apt-get install composer -y
+
+To uninstall
+$sudo apt-get remove composer
