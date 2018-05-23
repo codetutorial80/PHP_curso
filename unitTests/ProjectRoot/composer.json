@@ -1,0 +1,19 @@
+{
+    "name": "Love Project",
+    "description": "El proyecto de me amo",
+    "authors": [
+        {
+            "name": "yo",
+            "email": "micorreo@patito.com"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "Disney": "src"
+        }
+    },
+    "require": {
+	"szymach/c-pchart": "^3.0",
+        "monolog/monolog": "1.9.1"
+    }
+}

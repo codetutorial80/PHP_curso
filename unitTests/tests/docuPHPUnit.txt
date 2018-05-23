@@ -1,0 +1,25 @@
+Installing phunit 
+=================
+
+$sudo apt-get install php-xml -y
+$sudo apt-get install php-json -y
+$sudo apt-get install php-xdebug -y
+$sudo apt-get install php-mbstring -y
+
+Download
+$ wget https://phar.phpunit.de/phpunit-6.5.phar
+
+Change to executable
+$ chmod +x phpunit-6.5.phar
+
+Move to global bin
+$ sudo mv phpunit-6.5.phar /usr/local/bin/phpunit
+
+Test
+$ phpunit --version
+
+
+Installing phunit with Composer
+===============================
+
+$composer require --dev phpunit/phpunit ^6.5
