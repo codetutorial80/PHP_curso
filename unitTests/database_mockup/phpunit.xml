@@ -1,0 +1,23 @@
+<phpunit
+    version="1.0"
+    encoding="UTF-8"
+    colors="true"
+    bootstrap="bootstrap.php">
+
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">src</directory>
+        </whitelist>
+    </filter>
+
+    <testsuites>
+        <testsuite name="Db Test Suite">
+            <directory>./tests</directory>
+        </testsuite>
+    </testsuites>
+
+    <logging>
+        <log type="coverage-html" target="reports/coverage/"/>
+        <log type="testdox-html" target="reports/log.html"/>
+    </logging>
+</phpunit>
