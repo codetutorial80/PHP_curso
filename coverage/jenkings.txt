@@ -1,0 +1,68 @@
+Linux.-
+=====
+
+$sudo apt install openjdk-8-jre
+
+In case the first is not working:
+$sudo apt install openjdk-9-jre
+
+In case java needs to be uninstalled
+$sudo apt purge java*
+
+
+$wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
+
+$sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+
+$sudo apt-get update
+
+$sudo apt-get install jenkins
+
+If the path was not inserted
+$sudo vim/etc/init.d/jenkins
+Add to path ->  PATH=/bin:/usr/bin:/sbin:/usr/sbin:/usr/lib/jvm/java-8-openjdk-amd64/bin/
+
+-------------------------------------------------------------------------------------------------------------
+MAC.-
+===
+
+$brew tap caskroom/versions
+$brew cask install java8
+
+http://mirrors.jenkins.io/osx/latest
+
+or
+
+$brew install jenkins
+
+
+Files:
+/var/log/jenkins/jenkins.log
+/etc/default/jenkins   ----HTTP_PORT=8080----
+
+
+-----------------------------------------------------------------------
+
+$sudo apt install php7.1-fpm
+
+-----------------------------------------------------------------------
+
+Plugins 
+-------
+
+$wget http://localhost:8080/jnlpJars/jenkins-cli.jar
+
+$sudo vim /var/lib/jenkins/config.xml
+<useSecurity>false</useSecurity>
+$service jenkins restart
+
+
+$java -jar jenkins-cli.jar -s http://localhost:8080 install-plugin checkstyle cloverphp crap4j dry htmlpublisher jdepend plot pmd violations warnings xunit
+
+$java -jar jenkins-cli.jar -s http://localhost:8080 safe-restart
+
+$curl -L https://updates.jenkins-ci.org/update-center.json | sed '1d;$d' | curl -X POST -H 'Accept: application/json' -d @- http://localhost:8080/updateCenter/byId/default/postBack
+
+
+Check on https://updates.jenkins-ci.org/current/update-center.json
+Check on https://updates.jenkins-ci.org/download/plugins/
