@@ -1,0 +1,35 @@
+Install Docker
+--------------
+$sudo apt install docker.io
+
+Install Docker Compose
+----------------------
+$sudo apt install docker-compose
+$sudo docker-compose --version
+
+
+Start zf with docker compose
+----------------------
+$docker-compose up -d --build
+o
+$docker-compose run zf composer install
+
+$docker-compose ps
+
+Stop
+-----
+$docker-compose down
+$docker-compose stop
+
+
+In case failure
+---------------
+$sudo groupadd docker
+$sudo usermod -aG docker $USER
+$sudo service docker restart
+
+
+Using serve script
+------------------
+
+$composer serve
